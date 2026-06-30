@@ -2,6 +2,6 @@
 {{- if $author -}}
 <div class="meta__item-author meta__item">
 	{{ partial "svg/author.svg" (dict "class" "meta__icon") -}}
-	<span class="meta__text">{{ $author }}</span>
+	<span class="meta__text">{{ if reflect.IsMap $author }}{{ $author.name }}{{ else }}{{ $author }}{{ end }}</span>
 </div>
 {{- end -}}
